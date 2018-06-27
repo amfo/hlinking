@@ -1,0 +1,27 @@
+{
+    "name": "hotelinking/prueba",
+    "description": "Prueba conocimientos PHP",
+    "type": "project",
+    "authors": [
+      {
+        "name": "Antonio",
+        "email": "antonio.fernandez@gmx.com"
+      }
+    ],
+    "require": {
+        "nikic/fast-route": "dev-master"
+    },
+    "autoload": {
+      "psr-4": {
+        "Controllers\\": "app/Controllers/",
+        "Models\\": "app/Models/",
+        "System\\": "app/System/",
+        "Io\\": "app/Io/",
+        "Tests\\": "app/Tests/"
+      }
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}

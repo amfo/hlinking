@@ -1,0 +1,24 @@
+<?php
+include 'header.phtml';
+?>
+
+<div class="message <?php echo $params['type']; ?>">
+	<div class="center text">
+	<?php
+	echo $params['message'];
+	?>
+	</div>
+	<?php
+	if (isset($params['back']) && !empty($params['back'])):
+	?>
+	<div class="back center">
+		<a href="<?php echo $params['back']; ?>">Volver</a>
+	<div>
+	<?php
+	endif;
+	?>
+</div>
+
+<?php
+include 'footer.phtml';
+?>

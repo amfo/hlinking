@@ -1,0 +1,34 @@
+<?php
+include 'header.phtml';
+?>
+    <div class="user-panel">
+        <div class="user-header">
+            <span><?php echo $params['email']; ?></span>
+            <a href="/logout">Salir</a>
+            <a href="/promotion/new">Nuevo código</a>
+        </div>
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Código</th>
+                <th>Canjeado</th>
+                <th></th>
+            </tr>
+			<?php
+			while ($row = $params['cursor']->fetch()):
+				?>
+                <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['code']; ?></td>
+                    <td><?php echo $row['checked'] ? '<input type="checkbox" checked disabled>' : ""; ?></td>
+                    <td><?php echo !$row['checked'] ? '<a href="/promotion/check/' . $row['id'] . '">Canjear</a>' : ""; ?></td>
+                </tr>
+			<?php
+			endwhile;
+			?>
+        </table>
+    </div>
+<?php
+include 'footer.phtml';
+?>

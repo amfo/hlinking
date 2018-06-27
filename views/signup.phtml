@@ -1,0 +1,33 @@
+<?php
+include 'header.phtml';
+?>
+
+<div class="login">
+	<form name="user-login" method="post" action="/registro">
+		<fieldset>
+			<legend>Registro</legend>
+            <span>Email:</span> <input type="email" name="email">
+            <span>Contraseña:</span> <input type="password" name="passwd">
+			<span>Repite contraseña: </span><input type="password" name="passwd2">
+            <span>(Mínimo 8 caracteres)</span>
+			<?php
+			if (isset($params['csrf'])):
+			?>
+			<input type="hidden" name="csrf" value="<?php echo $params['csrf']; ?>">
+			<?php
+			endif;
+			?>
+		</fieldset>
+
+		<div class="center">
+			<button type="submit">Registrar</button>
+		</div>
+	</form>
+	<div class="center">
+		<a href="/login">Login</a>
+	</div>
+</div>
+
+<?php
+include 'footer.phtml';
+?>
